@@ -3,6 +3,7 @@ package myapp;
 import java.io.Console;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class HelloWorld{
     public static void main(String[] args){
@@ -104,7 +105,24 @@ public class HelloWorld{
             for (String name: identity) {
                 System.out.println(name);
             }
-        
+
+
+
+        List<String> words = new ArrayList<>();
+            String keyboardInput = "";
+        keyboardInput = cons.readLine("Enter a sentence");
+        keyboardInput = keyboardInput.replace(",", " ");
+        Scanner scan = new Scanner(keyboardInput);
+
+        while(scan.hasNext()) {
+            words.add(scan.next());
+        }
+        scan.close();
+
+        for (int z= 0; z<words.size(); z++) {
+            System.out.printf("%d: %s \r\n", z+1, words.get(z));
+        }
+         
 
     }
 }
